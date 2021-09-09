@@ -53,9 +53,9 @@ public class UsuarioController {
 	}
 	// Criar um usuário
 	@PostMapping("/cadastrar")
-	public ResponseEntity<Optional<Usuario>> criarUsuario(@RequestBody Usuario usuario) {
+	public ResponseEntity<Usuario> criarUsuario(@RequestBody Usuario usuario) {
 		
-		Optional<Usuario> novoUsuario = usuarioService.cadastrarUsuario(usuario);
+		Usuario novoUsuario = usuarioService.cadastrarUsuario(usuario);
 		
 		try {
 			

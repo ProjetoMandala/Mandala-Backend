@@ -8,6 +8,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
+import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -36,7 +37,7 @@ public class Postagem {
 	@Size(max = 255)
 	private String video;
 	
-	@Positive
+	@PositiveOrZero
 	private int curtida;
 	
 	//chave estrangeira Tema e Usuario
