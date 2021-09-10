@@ -10,6 +10,17 @@ public class UsuarioLogin {
 	
 	private String usuario;
 	
+	private String tipo;
+
+	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
 	private String senha;
 	
 	private String token;

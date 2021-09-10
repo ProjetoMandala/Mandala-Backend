@@ -39,6 +39,10 @@ public class Usuario {
 	private LocalDate dtNascimento; 
 	
 	private String imagem_perfil;
+	
+	private String tipo;
+
+	
 
 	@NotNull (message = "O atributo gênero precisa ser preenchido")
 	@Size (min = 2, max = 50)
@@ -136,6 +140,13 @@ public class Usuario {
 		this.imagem_perfil = imagem_perfil;
 	}
 	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 		
 
 }
