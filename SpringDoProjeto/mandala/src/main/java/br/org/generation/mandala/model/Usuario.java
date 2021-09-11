@@ -61,7 +61,7 @@ public class Usuario {
 	private String  senha;
 
 	// relacionamento com a tabela postagem
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)//só irá afetar a postagem caso de remover o usuario
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)//só irá afetar a postagem caso de remover o usuario
 	@JsonIgnoreProperties({"usuario","tema"})
 	private List<Postagem> postagem;
 	
