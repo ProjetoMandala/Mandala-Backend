@@ -39,7 +39,7 @@ public class UsuarioService {
 			int idade = Period.between(usuario.getDtNascimento(), LocalDate.now()).getYears();
 			
 			//verificando se o usuário é maior de 18 anos
-			if (idade <= 18) {
+			if (idade < 18) {
 				
 				//informe a ele
 				throw new ResponseStatusException(
@@ -86,7 +86,7 @@ public class UsuarioService {
 					int idade = Period.between(usuario.getDtNascimento(), LocalDate.now()).getYears();
 					
 					//verificando se o usuário é maior de 18 anos
-					if (idade <= 18) {
+					if (idade <18) {
 						
 						//informe a ele
 						throw new ResponseStatusException(
