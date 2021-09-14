@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.org.generation.mandala.model.Postagem;
 import br.org.generation.mandala.repository.PostagemRepository;
+import br.org.generation.mandala.service.PostagemService;
+
 
 @RestController
 @RequestMapping("/postagem")
@@ -25,6 +27,10 @@ public class PostagemController {
 	
 	@Autowired 
 	private PostagemRepository postagemRepository;
+	
+	@Autowired 
+	private PostagemService postagemService;
+
 
 	// Listar todas as Postagens da tabela 
 	@GetMapping
@@ -62,6 +68,18 @@ public class PostagemController {
 	@DeleteMapping("/{id}")
 	public void deletePostagem(@PathVariable long id) {
 		postagemRepository.deleteById(id);
+	}
+	
+	//Curtir Postagem
+	@PutMapping("/curtir/{id}")
+	public ResponseEntity<Postagem> putCurtirPostagemId (@PathVariable Long id){
+		return ResponseEntity.status(HttpStatus.OK).body(postagemService.curtir(id));	
+	}
+	
+	//Descurtir Postagem
+	@PutMapping("/descurtir/{id}")
+	public ResponseEntity<Postagem> putDescurtirPostagemId(@PathVariable Long id){
+		return ResponseEntity.status(HttpStatus.OK).body(postagemService.descurtir(id));
 	}
 	
 	

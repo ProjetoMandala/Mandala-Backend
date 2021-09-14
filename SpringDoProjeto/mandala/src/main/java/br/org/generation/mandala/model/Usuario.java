@@ -41,7 +41,6 @@ public class Usuario {
 	private String imagem_perfil;
 	
 	private String tipo;
-
 	
 
 	@NotNull (message = "O atributo gênero precisa ser preenchido")
