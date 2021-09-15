@@ -1,13 +1,17 @@
 package br.org.generation.mandala.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import br.org.generation.mandala.model.Postagem;
 import br.org.generation.mandala.repository.PostagemRepository;
-import org.springframework.web.server.ResponseStatusException;
 
+@Service
 public class PostagemService {
-
+	
+	@Autowired
 	private PostagemRepository postagemRepository;
 
 	public Postagem curtir(Long id) {
